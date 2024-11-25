@@ -1,7 +1,12 @@
 # TLPCertamen3
 Para desarrollar el certamen Final
 
-## Version 1.0
+## Ver 1.1
 
-- Creacion de Proyecto "EduPlanner"
-- Creacion de app "Core" para EduPlanner
+- Creacion Api "calendario"
+
+## Contenido
+
+- Proyeto "Eduplaner"
+- Api "core"
+- Api "calendario"
