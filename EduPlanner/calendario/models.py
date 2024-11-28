@@ -20,8 +20,9 @@ class Evento(models.Model):
     fecha = models.DateField(
         validators=[validar_fecha]
     )
-
-    tipos = models.ManyToManyField(TipoEvento)
+    
+    tipos = models.JSONField(default=list, blank=True)
+    
     descripcion = models.TextField()
 
     def __str__(self):

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Eventos</h1>
+    {% for evento in datos %}
+        <p>{{ evento.nombre }}</p>
+        <p>{{ evento.fecha }}</p>
+        {% for tipo in evento.tipos  %}
+            <p>{{ tipo }}</p>
+        {% endfor %}
+        <p>{{ evento.descripcion }}</p>
+    {% endfor %}
+
+
+</body>
+</html>
