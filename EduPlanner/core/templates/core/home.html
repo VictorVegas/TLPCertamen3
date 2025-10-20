@@ -1,21 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calendario Interactivo</title>
+    
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    
+    <!-- Tu propio CSS -->
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
 </head>
 <body>
-    <h1>Eventos</h1>
-    {% for evento in datos %}
-        <p>{{ evento.nombre }}</p>
-        <p>{{ evento.fecha }}</p>
-        {% for tipo in evento.tipos  %}
-            <p>{{ tipo }}</p>
-        {% endfor %}
-        <p>{{ evento.descripcion }}</p>
-    {% endfor %}
+    <h1>Calendario Interactivo</h1>
+    <div id="calendar"></div>
 
-
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    
+    <!-- Tu propio JavaScript -->
+    <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

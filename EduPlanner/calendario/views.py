@@ -40,7 +40,6 @@ def getHolidays(request, year):
     for i in holidays:
         evento = Evento()
         evento.nombre = i.get('name')
-        print(evento.nombre)
         fecha = i.get('date')
         datetime = fecha.get('datetime')
         year = datetime.get('year')
@@ -51,7 +50,6 @@ def getHolidays(request, year):
         
 
         for tipo in i.get('type'):
-            print(tipo)
             evento.tipos.append(tipo)
         evento.save()
         

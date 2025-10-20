@@ -3,18 +3,16 @@ from calendario.views import EventoList
 import requests
 # Create your views here.
 def home(request):
-    año = 2024
-    datos = getapi(año)
 
-    return render(request, "core/home.html", {"datos": datos})
+    return render(request, "core/home.html")
 
-def getapi(año):
+def getapi(request, año):
     # url es el nombre que tiene en urls.py
+    requests.get(f"http://localhost:8000/holidays/{año-1}")
     requests.get(f"http://localhost:8000/holidays/{año}")
+    requests.get(f"http://localhost:8000/holidays/{año+2}")
     link = requests.get(f"http://localhost:8000/eventos/")
 
     archivo = link.json()
-    print(archivo)
-    
     return archivo
 
